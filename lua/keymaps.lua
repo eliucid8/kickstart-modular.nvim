@@ -34,6 +34,28 @@ vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right win
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
+-- [[ My own commands ]]
+-- ok most taken shamelessly from ThePrimagen
+
+-- Open file explorer
+vim.keymap.set('n', '<leader>pv', vim.cmd.Ex, { desc = 'Open file explorer' })
+-- Center cursor when paging up
+vim.keymap.set('n', '<C-u>', '<C-u>zz', { desc = 'Move screen half-page up, center cursor' })
+vim.keymap.set('n', '<C-d>', '<C-d>zz', { desc = 'Move screen half-page up, center cursor' })
+-- Unfold region when searching
+vim.keymap.set('n', 'n', 'nzv')
+vim.keymap.set('n', 'N', 'Nzv')
+-- Move selected lines up/down, like alt-up/down in vscode
+vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv")
+vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv")
+-- Keep cursor in same spot when combining lines
+vim.keymap.set('n', 'J', 'mzJ`z')
+-- "Never press shift-q it's the worst place in the universe"
+vim.keymap.set('n', 'Q', '<nop>')
+
+-- Paste without overwriting paste register
+vim.keymap.set('x', '<leader>p', [["_dP]], { desc = 'Paste over selection without overwriting buffer' })
+
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 
