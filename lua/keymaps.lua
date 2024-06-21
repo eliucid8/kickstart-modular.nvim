@@ -37,6 +37,9 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 -- [[ My own commands ]]
 -- ok most taken shamelessly from ThePrimagen
 
+-- Navigate multiline text better
+vim.keymap.set('n', 'j', 'gj')
+vim.keymap.set('n', 'k', 'gk')
 -- Open file explorer
 vim.keymap.set('n', '<leader>pv', vim.cmd.Ex, { desc = 'Open file explorer' })
 -- Center cursor when paging up
