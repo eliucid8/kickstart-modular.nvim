@@ -38,8 +38,8 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 -- ok most taken shamelessly from ThePrimagen
 
 -- Navigate wrapped text
-vim.keymap.set('n', 'j', 'gj')
-vim.keymap.set('n', 'k', 'gk')
+vim.keymap.set('n', '<up>', 'g<up>')
+vim.keymap.set('n', '<down>', 'g<down>')
 -- Open file explorer
 vim.keymap.set('n', '<leader>pv', vim.cmd.Ex, { desc = 'Open file explorer' })
 -- Center cursor when paging up
@@ -58,6 +58,14 @@ vim.keymap.set('n', 'Q', '<nop>')
 
 -- Paste without overwriting paste register
 vim.keymap.set('x', '<leader>p', [["_dP]], { desc = 'Paste over selection without overwriting buffer' })
+
+-- enable word backspace/delete from insert mode
+vim.keymap.set('i', '<C-BS>', '<C-w>') -- this doesn't work in terminal
+vim.keymap.set('i', '<C-Del>', '<Esc>lvec')
+
+-- allow ctrl-shift select from insert mode
+vim.keymap.set('i', '<C-S-left>', '<Esc>vb')
+vim.keymap.set('i', '<C-S-right>', '<Esc>lve')
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
