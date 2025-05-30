@@ -260,6 +260,11 @@ return {
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
+      -- -- temporary fix to stop errors from happening
+      -- package.loaded['mason-lspconfig.features.automatic_enable'] = {
+      --   init = function() end,
+      -- }
+
       require('mason-lspconfig').setup {
         ensure_installed = {}, -- explicitly set to an empty table (Kickstart populates installs via mason-tool-installer)
         automatic_installation = false,
