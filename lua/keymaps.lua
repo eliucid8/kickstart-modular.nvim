@@ -42,6 +42,7 @@ vim.keymap.set('n', '<leader>pv', vim.cmd.Ex, { desc = 'Open file explorer' })
 -- Center cursor when paging up
 vim.keymap.set('n', '<C-u>', '<C-u>zz', { desc = 'Move screen half-page up, center cursor' })
 vim.keymap.set('n', '<C-d>', '<C-d>zz', { desc = 'Move screen half-page up, center cursor' })
+vim.keymap.set('n', '<C-e>', '<C-d>zz', { desc = 'Move screen half-page up, center cursor' })
 -- Unfold region when searching
 vim.keymap.set('n', 'n', 'nzv')
 vim.keymap.set('n', 'N', 'Nzv')
@@ -57,6 +58,7 @@ vim.keymap.set('n', 'Q', '<nop>')
 vim.keymap.set('x', '<leader>p', [["_dP]], { desc = 'Paste over selection without overwriting buffer' })
 
 -- enable word backspace/delete from insert mode
+vim.keymap.set('i', '<C-H>', '<C-w>')
 vim.keymap.set('i', '<C-BS>', '<C-w>') -- this doesn't work in terminal
 vim.keymap.set('i', '<C-Del>', '<Esc>lvec')
 
