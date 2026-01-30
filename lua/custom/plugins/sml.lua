@@ -4,5 +4,5 @@ vim.api.nvim_create_autocmd("FileType", {
         vim.bo.commentstring = "(* %s *)"
     end,
 })
-return {}
--- return { 'jez/vim-better-sml' }
+-- return {}
+return { 'jez/vim-better-sml' }
