@@ -109,7 +109,7 @@ return {
       end, { desc = '[S]earch [N]eovim files' })
 
       vim.keymap.set('n', '<leader>sa', function()
-        builtin.find_files { find_command = { 'rg', '--files', '--hidden', '-g', '!.git' } }
+        builtin.find_files { find_command = { 'rg', '--files', '--hidden', '--no-ignore', '-g', '!.git' } }
       end, { desc = '[S]earch [A]ll' })
     end,
   },
